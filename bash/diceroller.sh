@@ -10,21 +10,18 @@
 #         Rolling a pair of standard dice: x,y rolled
 #      and the other output lines should be similarly helpful to the user
 
-# roll the 6 sided dice and display the result
+# roll the regular 2 sided  dice and display the result
 echo "
-Rolling a pair of regular 6 sided dice:
+Rolling a pair of regular 2 side dice
 $(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1 )) rolled
 "
-
-# roll the 5 sided dice and display the result
+# roll the 5 sided  dice and display the result
 echo "
-Rolling a pair of 5 sided dice:
+Rolling a pair of 5 sided dice
 $(( RANDOM % 5 + 1)), $(( RANDOM % 5 + 1 )) rolled
 "
-
-
 # roll the 20 sided dice and display the result
 echo "
-Rolling a pair of 20 sided dice:
+Rolling a pair of 20 sied dice
 $(( RANDOM % 20 + 1)), $(( RANDOM % 20 + 1 )) rolled
 "
