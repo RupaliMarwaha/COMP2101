@@ -22,4 +22,4 @@ time=$(date '+%H:%M %p %A')
 
 
 output="Welcome to planet $hostname, \"$title $myname !\" It is $time "
-echo $output | cowsay
+echo $output | cowsay 
