@@ -43,7 +43,12 @@ External Name : $external_name
 EOF
 
 # Define the interface being summarized
-interface="eno1"
+count=$(lshw -class network | awk '/logical name:/{print $3}' | wc -l)
+for (( i = 1; i < $count; i++ )); do
+  interface=$(lshw -class network | awk '/logical name:/{print $3}' | awk-v z=$i 'NR==z{print $1; exit}')
+  if [[ $interface = lo* ]]; then
+    continue
+  fi
 
 # Find an address and hostname for the interface being summarized
 # we are assuming there is only one IPV4 address assigned to this interface
@@ -64,4 +69,4 @@ Network Address : $network_address
 Network Name    : $network_name
 
 EOF
-
+done
