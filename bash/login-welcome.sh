@@ -12,7 +12,9 @@
 ###############
 # Variables   #
 ###############
-title="Overlord"
+titles=( "Captain" "Sailor" "Chef" "Pilot" "Doctor" "Technician" "King" "Queen")
+index=$((RANDOM % ${#titles[@]}))
+title=${titles[$index]}
 myname=$USER
 hostname=$(hostname)
 time=$(date '+%H:%M %p %A')
@@ -22,4 +24,4 @@ time=$(date '+%H:%M %p %A')
 
 
 output="Welcome to planet $hostname, \"$title $myname !\" It is $time "
-echo $output | cowsay 
+echo $output | cowsay
